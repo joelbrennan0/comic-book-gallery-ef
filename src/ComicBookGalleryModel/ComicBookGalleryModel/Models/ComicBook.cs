@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,9 @@ namespace ComicBookGalleryModel.Models
         {
             Artists = new List<ComicBookArtist>();
         }
-        public int Id { get; set; }       
+
+        public int Id { get; set; }
+        public int SeriesId { get; set; }
         public int IssueNumber { get; set; }
         public string Description { get; set; }
         public DateTime PublishedOn { get; set; }
@@ -21,7 +24,7 @@ namespace ComicBookGalleryModel.Models
         public Series Series { get; set; }
         public ICollection<ComicBookArtist> Artists { get; set; }
 
-        public String displayText
+        public string DisplayText
         {
             get
             {
